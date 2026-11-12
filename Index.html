@@ -1,175 +1,256 @@
 <!doctype html>
-<html lang="en">
+<html lang="es" data-theme="day">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tu compañero IA de nueva generación. NovaBot es un asistente equipado con modelos de lenguaje avanzados."
+    />
+    <meta name="theme-color" content="#f7f5f0" />
     <title>ShopyBot AI</title>
+    <script>
+      const savedTheme = localStorage.getItem("shopybot-theme");
+      document.documentElement.dataset.theme =
+        savedTheme === "day" || savedTheme === "night"
+          ? savedTheme
+          : window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "night"
+            : "day";
+    </script>
     <link rel="stylesheet" href="resource/css/style.css" />
+    <script src="resource/js/theme.js" defer></script>
   </head>
   <body>
-    <div class="container">
-      <!-- header -->
-      <nav>
-        <div class="logo">ShopyBot<span class="accent"> AI </span></div>
-        <ul class="nav-links">
-          <li><a href="Index.html">Inicio</a></li>
-          <li><a href="#destacado">Destacados</a></li>
-          <li><a href="#especificaciones">Especificaciones</a></li>
-        </ul>
-      </nav>
-      <!-- header -->
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-      <!-- banner principal -->
-      <header class="hero">
-        <div class="hero-left">
-          <div class="hero-title-line">
-            <h1>Tu compañero IA de nueva generación</h1>
-          </div>
+    <div class="page-shell" id="inicio">
+      <header class="site-header">
+        <nav class="site-nav" aria-label="Navegación principal">
+          <a class="brand" href="#inicio" aria-label="ShopyBot AI, inicio">
+            ShopyBot<span> AI</span>
+          </a>
 
-          <div class="hero-text-line">
-            <p>
-              NovaBot no es solo un juguete. Es un asistente equipado con
+          <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#destacado">Destacados</a></li>
+            <li><a href="#especificaciones">Especificaciones</a></li>
+          </ul>
+
+          <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            aria-label="Cambiar a modo nocturno"
+            aria-pressed="false"
+          >
+            <svg
+              class="theme-icon theme-icon-sun"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
+              />
+            </svg>
+            <svg
+              class="theme-icon theme-icon-moon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z" />
+            </svg>
+            <span class="theme-label">Modo nocturno</span>
+          </button>
+        </nav>
+      </header>
+
+      <main id="contenido">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <h1 id="hero-title">Tu compañero IA de nueva generación</h1>
+            <p class="hero-description">
+              ShopyBot AI no es solo un juguete. Es un asistente equipado con
               modelos de lenguaje avanzados, diseñado para procesar
               interacciones naturales en tiempo real.
             </p>
+            <a class="button button-primary" href="#especificaciones">
+              Más Información -&gt;
+            </a>
           </div>
 
-          <a href="#" class="btn-info">Más Información -></a>
-        </div>
+          <div class="hero-visual">
+            <aside
+              class="hero-floating-card"
+              id="especificaciones"
+              aria-label="Especificaciones"
+            >
+              <ul>
+                <li>
+                  Procesamiento de lenguaje natural (NLP) de última generación
+                </li>
+                <li>Interacciones conversacionales fluidas y contextuales</li>
+                <li>Actualizaciones continuas con los últimos avances en IA</li>
+              </ul>
+            </aside>
+            <div class="hero-image-frame">
+              <picture>
+                <source
+                  srcset="resource/img/product/optimized/rob.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="resource/img/product/rob.jpg"
+                  alt="ShopyBot AI"
+                  width="1200"
+                  height="1200"
+                  fetchpriority="high"
+                  decoding="async"
+                />
+              </picture>
+            </div>
+          </div>
+        </section>
 
-        <div class="hero-right">
-          <div class="hero-floating-card">
+        <section
+          class="destacados section-block"
+          id="destacado"
+          aria-labelledby="destacados-title"
+        >
+          <div class="section-heading">
+            <h2 id="destacados-title">Destacados</h2>
+          </div>
+
+          <div class="product-grid">
+            <article class="product-card">
+              <div class="product-image">
+                <picture>
+                  <source
+                    srcset="resource/img/product/optimized/rob1.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="resource/img/product/rob1.jpg"
+                    alt="ShopyBot AI"
+                    width="1200"
+                    height="1200"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </div>
+              <ul class="product-features">
+                <li>Procesamiento de lenguaje natural (NLP) de última generación</li>
+                <li>Interacciones conversacionales fluidas y contextuales</li>
+                <li>Actualizaciones continuas con los últimos avances en IA</li>
+              </ul>
+            </article>
+            <article class="product-card">
+              <div class="product-image">
+                <picture>
+                  <source
+                    srcset="resource/img/product/optimized/rob2.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="resource/img/product/rob2.jpg"
+                    alt="ShopyBot AI"
+                    width="1200"
+                    height="1200"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </div>
+              <ul class="product-features">
+                <li>Procesamiento de lenguaje natural (NLP) de última generación</li>
+                <li>Interacciones conversacionales fluidas y contextuales</li>
+                <li>Actualizaciones continuas con los últimos avances en IA</li>
+              </ul>
+            </article>
+            <article class="product-card">
+              <div class="product-image">
+                <picture>
+                  <source
+                    srcset="resource/img/product/optimized/rob3.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="resource/img/product/rob3.jpg"
+                    alt="ShopyBot AI"
+                    width="1200"
+                    height="1200"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </div>
+              <ul class="product-features">
+                <li>Procesamiento de lenguaje natural (NLP) de última generación</li>
+                <li>Interacciones conversacionales fluidas y contextuales</li>
+                <li>Actualizaciones continuas con los últimos avances en IA</li>
+              </ul>
+            </article>
+            <article class="product-card">
+              <div class="product-image">
+                <picture>
+                  <source
+                    srcset="resource/img/product/optimized/rob4.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="resource/img/product/rob4.jpg"
+                    alt="ShopyBot AI"
+                    width="1200"
+                    height="1200"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </div>
+              <ul class="product-features">
+                <li>Procesamiento de lenguaje natural (NLP) de última generación</li>
+                <li>Interacciones conversacionales fluidas y contextuales</li>
+                <li>Actualizaciones continuas con los últimos avances en IA</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-container">
+          <div class="footer-section">
+            <a class="brand" href="Index.html">ShopyBot<span> AI</span></a>
+            <p>
+              El futuro de la interacción conversacional en la palma de tu mano.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Enlaces Rápidos</h3>
             <ul>
-              <li>
-                Procesamiento de lenguaje natural (NLP) de última generación
-              </li>
-              <li>Interacciones conversacionales fluidas y contextuales</li>
-              <li>Actualizaciones continuas con los últimos avances en IA</li>
+              <li><a href="#">Soporte Técnico</a></li>
+              <li><a href="#">Documentación API</a></li>
+              <li><a href="#">Actualizaciones</a></li>
             </ul>
           </div>
-          <div class="img-placeholder hero-main-img">
-            <img
-              src="resource/img/product/rob.jpg"
-              alt="Robot Inteligente Nova"
-            />
+
+          <div class="footer-section">
+            <h3>Legal</h3>
+            <ul>
+              <li><a href="#">Términos de Servicio</a></li>
+              <li><a href="#">Política de Privacidad</a></li>
+              <li><a href="#">Garantía</a></li>
+            </ul>
           </div>
         </div>
-      </header>
-      <!-- banner principal -->
 
-      <section class="destacados" id="destacado">
-        <div class="destacados-header">
-          <h2>Destacados</h2>
+        <div class="footer-bottom">
+          <p>&copy; 2026 ShopyBot AI Inc. Todos los derechos reservados.</p>
         </div>
-
-        <div class="cards-grid">
-          <div class="card">
-            <div class="img-placeholder card-img">
-              <img
-                src="resource/img/product/rob1.jpg"
-                alt="Robot Inteligente Nova"
-              />
-            </div>
-            <div class="card-line">
-              <ul>
-                <li>
-                  Procesamiento de lenguaje natural (NLP) de última generación
-                </li>
-                <li>Interacciones conversacionales fluidas y contextuales</li>
-                <li>Actualizaciones continuas con los últimos avances en IA</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="img-placeholder card-img">
-              <img
-                src="resource/img/product/rob2.jpg"
-                alt="Robot Inteligente Nova"
-              />
-            </div>
-            <div class="card-line">
-              <ul>
-                <li>
-                  Procesamiento de lenguaje natural (NLP) de última generación
-                </li>
-                <li>Interacciones conversacionales fluidas y contextuales</li>
-                <li>Actualizaciones continuas con los últimos avances en IA</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="img-placeholder card-img">
-              <img
-                src="resource/img/product/rob3.jpg"
-                alt="Robot Inteligente Nova"
-              />
-            </div>
-            <div class="card-line">
-              <ul>
-                <li>
-                  Procesamiento de lenguaje natural (NLP) de última generación
-                </li>
-                <li>Interacciones conversacionales fluidas y contextuales</li>
-                <li>Actualizaciones continuas con los últimos avances en IA</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="img-placeholder card-img">
-              <img
-                src="resource/img/product/rob4.jpg"
-                alt="Robot Inteligente Nova"
-              />
-            </div>
-            <div class="card-line">
-              <ul>
-                <li>
-                  Procesamiento de lenguaje natural (NLP) de última generación
-                </li>
-                <li>Interacciones conversacionales fluidas y contextuales</li>
-                <li>Actualizaciones continuas con los últimos avances en IA</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+      </footer>
     </div>
-    <!-- pie de página -->
-    <footer>
-      <div class="footer-container">
-        <div class="footer-section">
-          <a href="Index.html"><h3 class="logo">ShopyBot<span class="accent"> AI </span></h3></a>
-          <p>
-            El futuro de la interacción conversacional en la palma de tu mano.
-          </p>
-        </div>
-
-        <div class="footer-section">
-          <h4>Enlaces Rápidos</h4>
-          <ul>
-            <li><a href="#">Soporte Técnico</a></li>
-            <li><a href="#">Documentación API</a></li>
-            <li><a href="#">Actualizaciones</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="#">Términos de Servicio</a></li>
-            <li><a href="#">Política de Privacidad</a></li>
-            <li><a href="#">Garantía</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 NovaBot Inc. Todos los derechos reservados.</p>
-      </div>
-    </footer>
-    
   </body>
 </html>
